@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vowel Counter</title>
+    <link rel="stylesheet" href="Vowel Counter.css">
+</head>
+<body>
+    <div class="box">
+        <h4>Vowel Counter</h4>
+        <textarea id="textArea" onkeyup="countVowel(this.value)"></textarea>
+        <p>Vowel<span id="vowelCount">0</span></p>
+    </div>
+
+    <script type="text/javascript">
+        var vowelCount = document.getElementById('vowelCount');
+
+        function countVowel(str) {
+
+            str = str.toLowerCase();
+            let = vowArr = ['a','e','i','o','u'];
+
+            counter = 0;
+
+                for (let letter of str) {
+                    if (vowArr.includes(letter)) {
+                        counter++;
+                        vowelCount.classList.add('blink');
+                    } else {
+                        vowelCount.classList.remove('blink');
+                    }
+                }
+
+                vowelCount.innerHTML = counter;
+
+        }
+    </script>
+</body>
+</html>
